@@ -1,4 +1,4 @@
-import { faChevronCircleUp, faHome, faHouseUser } from "@fortawesome/free-solid-svg-icons";
+import { faHome } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import { calculateAvgPrice, calculateHousesInCommunity } from "../../utils/app.utils";
@@ -25,7 +25,7 @@ const Community: React.FunctionComponent<ICommunity> = (props) => {
           {community.name}
         </span>
         <div className="price-houses-container">
-          <span className="community-price">Avg. Price: {avgPrice ? `$${avgPrice}` : "Not Available"}</span>
+          <span className="community-price">Avg. Price: {avgPrice ? `$${avgPrice}` : "NA"}</span>
           <span>
             <FontAwesomeIcon icon={faHome} className="house-icon" />
             <span className="houses-amount">{housesInCommunity || "None Found"}</span>
