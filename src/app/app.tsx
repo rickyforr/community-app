@@ -31,7 +31,12 @@ function App() {
         </div>
       )}
       {loading && <Progress color="#223e6d" size="30px" />}
-      {!loading && !!communities.length && <Communities communities={communities} houses={houses} />}
+      {!loading && !communities?.length && (
+        <div data-name="error" className="error-notification">
+          {"No Communities Data"}
+        </div>
+      )}
+      {!loading && !!communities?.length && <Communities communities={communities} houses={houses} />}
     </div>
   );
 }

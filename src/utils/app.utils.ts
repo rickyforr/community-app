@@ -7,7 +7,7 @@ import { Community, House } from "../communities/communities.props.interface";
  * @param houses
  */
 export const calculateAvgPrice = (communityId: string, houses: House[]): string => {
-  if (!houses?.length) {
+  if (!Array.isArray(houses) || !houses?.length) {
     return "";
   }
   const communityHouses = houses.filter((h) => h.communityId === communityId);
@@ -24,6 +24,9 @@ export const calculateAvgPrice = (communityId: string, houses: House[]): string 
  * @param communities
  */
 export const sortCommunitiesByName = (communities: Community[]): Community[] => {
+  if (!Array.isArray(communities)) {
+    return [];
+  }
   return communities.sort((a, b) => a.name.localeCompare(b.name));
 };
 
@@ -34,7 +37,7 @@ export const sortCommunitiesByName = (communities: Community[]): Community[] => 
  * @param houses
  */
 export const calculateHousesInCommunity = (communityId: string, houses: House[]): number => {
-  if (!houses.length) {
+  if (!Array.isArray(houses) || !houses.length) {
     return 0;
   }
   const communityHouses = houses.filter((h) => h.communityId === communityId);

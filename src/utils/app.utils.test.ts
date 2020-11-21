@@ -32,6 +32,13 @@ describe("AppUtils", () => {
       expect(result).toBe("");
     });
 
+    it("should return an empty string if houses is not an array", () => {
+      const communityId: string = "2";
+      const houses: string = "houses";
+      const result = calculateAvgPrice(communityId, (houses as unknown) as House[]);
+      expect(result).toBe("");
+    });
+
     it("should return an empty string if no houses match the given community id", () => {
       const communityId: string = "2";
       const houses: House[] = [
@@ -83,6 +90,12 @@ describe("AppUtils", () => {
       expect(result[1].name).toBe("Mountview");
       expect(result[2].name).toBe("Varsity");
     });
+
+    it("should return an empty array if communities is not an array", () => {
+      const communities: string = "communities";
+      const result = sortCommunitiesByName((communities as unknown) as Community[]);
+      expect(result).toStrictEqual([]);
+    });
   });
 
   describe("calculateHousesInCommunity", () => {
@@ -119,6 +132,13 @@ describe("AppUtils", () => {
       const communityId: string = "1";
       const houses: House[] = [];
       const result = calculateHousesInCommunity(communityId, houses);
+      expect(result).toBe(0);
+    });
+
+    it("should return 0 if house is not an array", () => {
+      const communityId: string = "1";
+      const houses = "house";
+      const result = calculateHousesInCommunity(communityId, (houses as unknown) as House[]);
       expect(result).toBe(0);
     });
 
