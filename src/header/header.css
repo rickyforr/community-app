@@ -1,0 +1,16 @@
+.header {
+  background-color: #223e6d;
+  color: white;
+  min-height: 50px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  box-shadow: 0 0 35px 0 rgba(154, 161, 171, 0.336);
+}
+
+.title {
+  font-size: 26px;
+  font-weight: 200;
+}
