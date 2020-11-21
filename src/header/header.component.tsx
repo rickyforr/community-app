@@ -4,7 +4,7 @@ import "./header.css";
 const Header = () => {
   return (
     <div className="header">
-      <span className="title"> Community App</span>
+      <span className="title">Community App</span>
     </div>
   );
 };
