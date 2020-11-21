@@ -9,7 +9,7 @@ import { ICommunity } from "./community.props.interface";
  * Renders a single community and its relevant details.
  */
 const Community: React.FunctionComponent<ICommunity> = (props) => {
-  const [noImage, setNoImage] = useState(false);
+  const [noImage, setNoImage] = useState<boolean>(false);
   const { community, houses } = props;
   const brokenSource = () => {
     setNoImage(true);

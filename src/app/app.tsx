@@ -12,9 +12,9 @@ import Progress from "react-svg-progress";
 function App() {
   const [communities, setCommunities] = useState<Community[]>([]);
   const [houses, setHouses] = useState<House[]>([]);
-  const [getCommunitiesPending, setGetCommunitiesPending] = useState(false);
-  const [getHousesPending, setGetHousesPending] = useState(false);
-  const [error, setError] = useState("");
+  const [getCommunitiesPending, setGetCommunitiesPending] = useState<boolean>(false);
+  const [getHousesPending, setGetHousesPending] = useState<boolean>(false);
+  const [error, setError] = useState<string>("");
   const loading = getCommunitiesPending || getHousesPending;
 
   useEffect(() => {
@@ -23,7 +23,7 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <div className="app-container">
       <Header />
       {error && (
         <div data-name="error" className="error-notification">
